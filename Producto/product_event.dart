@@ -19,7 +19,6 @@ class AddArticulo extends ArticuloEvent {
   AddArticulo(this.articulo);
 }
 
-//ultimo agregado para manejar el carrito
 class LoadArticuloDetalle extends ArticuloEvent {
   final int articuloDetalleId;
 

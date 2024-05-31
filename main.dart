@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_csharp3/Administrador/ImagenBarAdmin/bloc_image_admin.dart';
 import 'package:flutter_csharp3/Clientes/BLoCCliente/cliente_bloc.dart';
+import 'package:flutter_csharp3/Clientes/Billetera/WalletBloc/wallet_bloc.dart';
 import 'package:flutter_csharp3/Clientes/CarritoCliente/carrito_bloc.dart';
-import 'package:flutter_csharp3/Clientes/CarritoCliente/carrito_event.dart';
 import 'package:flutter_csharp3/Clientes/ImagenBarCliente/bloc_image_client.dart';
 import 'package:flutter_csharp3/Producto/product_bloc.dart';
 import 'package:flutter_csharp3/Administrador/BLoCAdmin/user_bloc.dart';
@@ -13,6 +13,7 @@ import 'package:flutter_csharp3/routes.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+
   runApp(const MyApp());
 }
 
@@ -42,8 +43,11 @@ class MyApp extends StatelessWidget {
           create: (context) => ImagenBlocClient(),
         ),
         BlocProvider<CarritoBloc>(
-            create: (context) => CarritoBloc(context.read<LoginClientBloc>())
-              ..add(LoadCartItems())),
+          create: (context) => CarritoBloc(context.read<LoginClientBloc>()),
+        ),
+        BlocProvider<WalletBloc>(
+          create: (context) => WalletBloc(context.read<LoginClientBloc>()),
+        )
       ],
       child: MaterialApp.router(
         debugShowCheckedModeBanner: false,

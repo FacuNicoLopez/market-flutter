@@ -1,10 +1,6 @@
 import 'dart:async';
 
-import 'package:flutter/material.dart';
-import 'package:flutter_csharp3/Clientes/BarClientes/bar_client.dart';
-import 'package:flutter_csharp3/Clientes/BLoCCliente/client_model.dart';
-import 'package:flutter_csharp3/data_card.dart';
-import 'package:go_router/go_router.dart';
+import 'package:flutter_csharp3/Clientes/screen_view_client.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class HomeClient extends StatefulWidget {
@@ -48,15 +44,16 @@ class _HomeClientState extends State<HomeClient> {
   @override
   Widget build(BuildContext context) {
     return CommonScaffold(
-      cliente: widget.cliente,
-      title: "Inicio",
-      body: Container(
+        cliente: widget.cliente,
+        title: "Inicio",
+        body: Container(
           decoration: const BoxDecoration(
               gradient: LinearGradient(colors: [
             Color.fromRGBO(70, 169, 178, 1),
             Color.fromRGBO(255, 231, 233, 1)
           ])),
-          child: Column(children: [
+          child: SingleChildScrollView(
+              child: Column(children: [
             Align(
               alignment: Alignment.topLeft,
               child: Padding(
@@ -126,6 +123,6 @@ class _HomeClientState extends State<HomeClient> {
                   ),
                 )),
           ])),
-    );
+        ));
   }
 }

@@ -1,9 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_csharp3/Clientes/BLoCCliente/cliente_bloc.dart';
-import 'package:flutter_csharp3/Clientes/BLoCCliente/client_event.dart';
-import 'package:flutter_csharp3/Clientes/BLoCCliente/client_state.dart';
-import 'package:go_router/go_router.dart';
+import 'package:flutter_csharp3/Clientes/screen_view_client.dart';
 
 class LoginClient extends StatefulWidget {
   const LoginClient({super.key});
@@ -15,7 +10,6 @@ class LoginClient extends StatefulWidget {
 class _LoginClientState extends State<LoginClient> {
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
-  // bool _isLoading = false;
 
   @override
   void dispose() {

@@ -1,5 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
+import 'package:flutter_csharp3/Clientes/screen_view_client.dart';
 
 class LikesCardClient extends StatelessWidget {
   final int index;

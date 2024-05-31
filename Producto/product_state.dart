@@ -18,7 +18,6 @@ class ArticuloDeleted extends ArticuloState {}
 
 class ArticuloEdited extends ArticuloState {}
 
-//manejo de un solo articulo
 class ArticuloLoaded extends ArticuloState {
   final Articulo articuloDetalle;
   ArticuloLoaded(this.articuloDetalle);

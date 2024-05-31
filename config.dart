@@ -1,1 +1,1 @@
-const direccionUrl = 'http://your-ip/api/usuario';
+const direccionUrl = 'http://your-api/api';

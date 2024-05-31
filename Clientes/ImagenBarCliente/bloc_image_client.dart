@@ -1,7 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_csharp3/Clientes/ImagenBarCliente/image_event_client.dart';
-import 'package:flutter_csharp3/Clientes/ImagenBarCliente/image_state_client.dart';
+import 'package:flutter_csharp3/Clientes/screen_view_client.dart';
 
 class ImagenBlocClient extends Bloc<ImagenEventClient, ImagenStateClient> {
   ImagenBlocClient()

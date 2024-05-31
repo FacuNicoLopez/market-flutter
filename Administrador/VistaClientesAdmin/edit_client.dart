@@ -1,5 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_csharp3/Administrador/screen_view_admin.dart';
 import 'package:flutter_csharp3/Clientes/BLoCCliente/client_event.dart';
 import 'package:flutter_csharp3/Clientes/BLoCCliente/client_model.dart';
 import 'package:flutter_csharp3/Clientes/BLoCCliente/cliente_bloc.dart';

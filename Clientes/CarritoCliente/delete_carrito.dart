@@ -1,10 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_csharp3/Clientes/CarritoCliente/carrito_bloc.dart';
-import 'package:flutter_csharp3/Clientes/CarritoCliente/carrito_event.dart';
-import 'package:flutter_csharp3/Clientes/CarritoCliente/carrito_model.dart';
-import 'package:flutter_csharp3/Producto/product_bloc.dart';
-import 'package:flutter_csharp3/Producto/product_event.dart';
+import 'package:flutter_csharp3/Clientes/screen_view_client.dart';
 
 void showDeleteDialog(BuildContext context, Carrito carritoItem) {
   showDialog(

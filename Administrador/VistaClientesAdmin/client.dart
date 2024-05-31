@@ -1,13 +1,9 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_csharp3/Administrador/VistaClientesAdmin/add_cliente.dart';
 import 'package:flutter_csharp3/Administrador/VistaClientesAdmin/delete_client.dart';
 import 'package:flutter_csharp3/Administrador/VistaClientesAdmin/edit_client.dart';
-import 'package:flutter_csharp3/Clientes/BLoCCliente/cliente_bloc.dart';
-import 'package:flutter_csharp3/Administrador/BLoCAdmin/user_bloc.dart';
+import 'package:flutter_csharp3/Administrador/screen_view_admin.dart';
 import 'package:flutter_csharp3/Clientes/BLoCCliente/client_state.dart';
-import 'package:flutter_csharp3/Administrador/BLoCAdmin/user_state.dart';
-import 'package:flutter_csharp3/Administrador/BarAdmin/bar_admin.dart';
+import 'package:flutter_csharp3/Clientes/BLoCCliente/cliente_bloc.dart';
 
 class ClientUser extends StatelessWidget {
   const ClientUser({super.key});

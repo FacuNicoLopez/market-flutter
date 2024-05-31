@@ -1,10 +1,6 @@
 import 'dart:async';
 
-import 'package:flutter/material.dart';
-import 'package:flutter_csharp3/Administrador/BLoCAdmin/user_model.dart';
-import 'package:flutter_csharp3/Administrador/BarAdmin/bar_admin.dart';
-import 'package:flutter_csharp3/data_card.dart';
-import 'package:go_router/go_router.dart';
+import 'package:flutter_csharp3/Administrador/screen_view_admin.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class HomePage extends StatefulWidget {
@@ -48,15 +44,16 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return CommonScaffold(
-      usuario: widget.usuario,
-      title: "Inicio",
-      body: Container(
+        usuario: widget.usuario,
+        title: "Inicio",
+        body: Container(
           decoration: const BoxDecoration(
               gradient: LinearGradient(colors: [
             Color.fromRGBO(255, 231, 233, 1),
             Color.fromRGBO(70, 169, 178, 1)
           ])),
-          child: Column(children: [
+          child: SingleChildScrollView(
+              child: Column(children: [
             Align(
               alignment: Alignment.topLeft,
               child: Padding(
@@ -64,7 +61,7 @@ class _HomePageState extends State<HomePage> {
                 child: Text(
                   'Bienvenido ${widget.usuario.nameUser}',
                   style: const TextStyle(
-                      fontSize: 28,
+                      fontSize: 26,
                       color: Color.fromARGB(255, 78, 75, 75),
                       fontWeight: FontWeight.bold),
                 ),
@@ -126,6 +123,6 @@ class _HomePageState extends State<HomePage> {
                   ),
                 )),
           ])),
-    );
+        ));
   }
 }

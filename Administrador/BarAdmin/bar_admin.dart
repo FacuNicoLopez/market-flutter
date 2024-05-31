@@ -1,7 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_csharp3/Administrador/BarAdmin/button_logout.dart';
-import 'package:flutter_csharp3/Administrador/BarAdmin/custom_drawer.dart';
-import 'package:flutter_csharp3/Administrador/BLoCAdmin/user_model.dart';
+import 'package:flutter_csharp3/Administrador/screen_view_admin.dart';
 
 class CommonScaffold extends StatelessWidget {
   final Widget body;

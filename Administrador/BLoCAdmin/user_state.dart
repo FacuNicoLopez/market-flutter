@@ -6,6 +6,12 @@ class UsuarioInitial extends UsuarioState {}
 
 class UsuarioLoading extends UsuarioState {}
 
+class UsuariosLoaded extends UsuarioState {
+  final List<Usuario> usuarios;
+
+  UsuariosLoaded(this.usuarios);
+}
+
 class UsuarioLoaded extends UsuarioState {
   final Usuario usuario;
 
@@ -17,3 +23,5 @@ class UsuarioError extends UsuarioState {
 
   UsuarioError(this.message);
 }
+
+class UsuarioDeleted extends UsuarioState {}

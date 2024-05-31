@@ -1,14 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_csharp3/Clientes/BLoCCliente/client_state.dart';
-import 'package:flutter_csharp3/Clientes/BLoCCliente/cliente_bloc.dart';
-import 'package:flutter_csharp3/Clientes/CarritoCliente/carrito_bloc.dart';
-import 'package:flutter_csharp3/Clientes/CarritoCliente/carrito_event.dart';
-import 'package:flutter_csharp3/Clientes/CarritoCliente/carrito_model.dart';
-import 'package:flutter_csharp3/Clientes/BarClientes/bar_client.dart';
-import 'package:flutter_csharp3/Producto/product_bloc.dart';
-import 'package:flutter_csharp3/Producto/product_event.dart';
-import 'package:flutter_csharp3/Producto/product_state.dart';
+import 'package:flutter_csharp3/Clientes/screen_view_client.dart';
 
 class RemeraCliente extends StatelessWidget {
   const RemeraCliente({super.key});

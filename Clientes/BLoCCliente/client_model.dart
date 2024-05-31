@@ -13,6 +13,7 @@ class Cliente {
   String? claveCliente;
   String? nombreCliente;
   String? apellidoCliente;
+  double? saldo;
 
   Cliente({
     this.idCliente,
@@ -21,6 +22,7 @@ class Cliente {
     this.claveCliente,
     this.nombreCliente,
     this.apellidoCliente,
+    this.saldo,
   });
 
   Cliente copyWith({
@@ -30,15 +32,16 @@ class Cliente {
     String? claveCliente,
     String? nombreCliente,
     String? apellidoCliente,
+    double? saldo,
   }) {
     return Cliente(
-      idCliente: idCliente ?? this.idCliente,
-      token: token ?? this.token,
-      emailCliente: emailCliente ?? this.emailCliente,
-      claveCliente: claveCliente ?? this.claveCliente,
-      nombreCliente: nombreCliente ?? this.nombreCliente,
-      apellidoCliente: apellidoCliente ?? this.apellidoCliente,
-    );
+        idCliente: idCliente ?? this.idCliente,
+        token: token ?? this.token,
+        emailCliente: emailCliente ?? this.emailCliente,
+        claveCliente: claveCliente ?? this.claveCliente,
+        nombreCliente: nombreCliente ?? this.nombreCliente,
+        apellidoCliente: apellidoCliente ?? this.apellidoCliente,
+        saldo: saldo ?? this.saldo);
   }
 
   factory Cliente.fromJson(Map<String, dynamic> json) => Cliente(
@@ -48,6 +51,7 @@ class Cliente {
         claveCliente: json['claveCliente'] as String?,
         nombreCliente: json['nombreCliente'] as String?,
         apellidoCliente: json['apellidoCliente'] as String?,
+        saldo: (json['saldoCliente'] as num?)?.toDouble(),
       );
 
   Map<String, dynamic> toJson() => {
@@ -57,5 +61,6 @@ class Cliente {
         "claveCliente": claveCliente,
         "nombreCliente": nombreCliente,
         "apellidocliente": apellidoCliente,
+        "saldoCliente": saldo,
       };
 }

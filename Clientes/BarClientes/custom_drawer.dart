@@ -1,10 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_csharp3/Clientes/BLoCCliente/client_model.dart';
-import 'package:flutter_csharp3/Clientes/ImagenBarCliente/bloc_image_client.dart';
-import 'package:flutter_csharp3/Clientes/ImagenBarCliente/image_event_client.dart';
-import 'package:flutter_csharp3/Clientes/ImagenBarCliente/image_state_client.dart';
-import 'package:go_router/go_router.dart';
+import 'package:flutter_csharp3/Clientes/screen_view_client.dart';
 
 class CustomDrawer extends StatelessWidget {
   final Cliente cliente;
@@ -49,6 +43,16 @@ class CustomDrawer extends StatelessWidget {
                           style: themeData.textTheme.bodyLarge),
                       onTap: () {
                         context.go('/card_client');
+                      },
+                    ),
+                    ListTile(
+                      tileColor: themeData.colorScheme.background,
+                      leading:
+                          Icon(Icons.wallet, color: themeData.iconTheme.color),
+                      title: Text('Billetera',
+                          style: themeData.textTheme.bodyLarge),
+                      onTap: () {
+                        context.go('/wallet');
                       },
                     ),
                     ListTile(

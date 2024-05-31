@@ -1,7 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_csharp3/Administrador/TarjetasAdmin/image_card.dart';
-import 'package:flutter_csharp3/Administrador/TarjetasAdmin/likes_card.dart';
-import 'package:flutter_csharp3/Administrador/TarjetasAdmin/title_card.dart';
+import 'package:flutter_csharp3/Administrador/screen_view_admin.dart';
 
 class CardFeed extends StatelessWidget {
   const CardFeed({super.key, required this.card, required this.index});

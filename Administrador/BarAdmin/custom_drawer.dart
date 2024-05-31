@@ -1,10 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_csharp3/Administrador/BLoCAdmin/user_model.dart';
-import 'package:flutter_csharp3/Administrador/ImagenBarAdmin/bloc_image_admin.dart';
-import 'package:flutter_csharp3/Administrador/ImagenBarAdmin/image_event_admin.dart';
-import 'package:flutter_csharp3/Administrador/ImagenBarAdmin/image_state_admin.dart';
-import 'package:go_router/go_router.dart';
+import 'package:flutter_csharp3/Administrador/screen_view_admin.dart';
 
 class CustomDrawer extends StatelessWidget {
   final Usuario usuario;
@@ -52,7 +46,7 @@ class CustomDrawer extends StatelessWidget {
                     ),
                     ListTile(
                       tileColor: themeData.colorScheme.background,
-                      leading: Icon(Icons.settings,
+                      leading: Icon(Icons.shopping_bag_rounded,
                           color: themeData.iconTheme.color),
                       title: Text('Ajuste Productos',
                           style: themeData.textTheme.bodyLarge),
@@ -68,6 +62,16 @@ class CustomDrawer extends StatelessWidget {
                           style: themeData.textTheme.bodyLarge),
                       onTap: () {
                         context.go('/clientes');
+                      },
+                    ),
+                    ListTile(
+                      tileColor: themeData.colorScheme.background,
+                      leading: Icon(Icons.settings,
+                          color: themeData.iconTheme.color),
+                      title: Text('Ajuste Cuenta',
+                          style: themeData.textTheme.bodyLarge),
+                      onTap: () {
+                        context.go('/settings');
                       },
                     ),
                     ListTile(

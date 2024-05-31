@@ -1,9 +1,5 @@
 import 'dart:convert';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_csharp3/Clientes/BLoCCliente/client_event.dart';
-import 'package:flutter_csharp3/Clientes/BLoCCliente/client_model.dart';
-import 'package:flutter_csharp3/Clientes/BLoCCliente/client_state.dart';
-import 'package:flutter_csharp3/config.dart';
+import 'package:flutter_csharp3/Clientes/screen_view_client.dart';
 import 'package:http/http.dart' as http;
 
 //MANEJO DE INICIO DE SESION DE CLIENTES
@@ -11,38 +7,6 @@ class LoginClientBloc extends Bloc<ClienteEvent, ClienteState> {
   Cliente? clienteActual;
 
   final url2 = direccionUrl;
-
-  // Future<Cliente> _loginCliente(String email, String password) async {
-  //   try {
-  //     var url5 = Uri.parse('$url2/cliente/login');
-  //     final response = await http.post(url5,
-  //         headers: {"Content-Type": "application/json"},
-  //         body: jsonEncode({
-  //           "emailCliente": email,
-  //           "claveCliente": password,
-  //         }));
-  //     if (response.statusCode == 200) {
-  //       if (response.statusCode != 200) {
-  //         throw Exception('Failed to load user: ${response.body}');
-  //       }
-
-  //       final data = jsonDecode(response.body);
-  //       final idCliente = data['idCliente'] as int?;
-  //       final token = data['token'] as String?;
-  //       final emailCliente = data['emailCliente'] as String;
-  //       final nombreCliente = data['nombreCliente'] as String?;
-  //       return Cliente(
-  //           idCliente: idCliente,
-  //           token: token,
-  //           emailCliente: emailCliente,
-  //           nombreCliente: nombreCliente);
-  //     } else {
-  //       throw Exception('Error al cargar usuario');
-  //     }
-  //   } catch (e) {
-  //     throw Exception('Error al cargar usuario ${e.toString()}');
-  //   }
-  // }
 
   LoginClientBloc() : super(ClientInitial()) {
     on<ClientLoginEvent>((event, emit) async {

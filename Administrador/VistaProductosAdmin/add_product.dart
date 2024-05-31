@@ -1,9 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_csharp3/Administrador/imagen_producto.dart';
-import 'package:flutter_csharp3/Producto/product_bloc.dart';
-import 'package:flutter_csharp3/Producto/product_event.dart';
-import 'package:flutter_csharp3/Producto/product_model.dart';
+import 'package:flutter_csharp3/Administrador/screen_view_admin.dart';
 
 void showAddDialog(BuildContext context) {
   final precioController = TextEditingController();

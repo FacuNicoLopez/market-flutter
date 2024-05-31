@@ -1,7 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_csharp3/Administrador/ImagenBarAdmin/image_event_admin.dart';
-import 'package:flutter_csharp3/Administrador/ImagenBarAdmin/image_state_admin.dart';
+import 'package:flutter_csharp3/Administrador/screen_view_admin.dart';
 
 class ImagenBloc extends Bloc<ImagenEvent, ImagenState> {
   ImagenBloc()

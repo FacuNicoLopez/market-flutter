@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:flutter_csharp3/Clientes/screen_view_client.dart';
 
 class ImageCardClient extends StatelessWidget {
   const ImageCardClient({super.key, required this.imagen});

@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:flutter_csharp3/Administrador/screen_view_admin.dart';
 
 class ImageCard extends StatelessWidget {
   const ImageCard({super.key, required this.imagen});

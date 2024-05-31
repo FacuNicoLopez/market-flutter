@@ -1,10 +1,6 @@
 import 'dart:convert';
 
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_csharp3/Producto/product_event.dart';
-import 'package:flutter_csharp3/Producto/product_model.dart';
-import 'package:flutter_csharp3/Producto/product_state.dart';
-import 'package:flutter_csharp3/config.dart';
+import 'package:flutter_csharp3/Clientes/screen_view_client.dart';
 import 'package:http/http.dart' as http;
 
 class ArticuloBloc extends Bloc<ArticuloEvent, ArticuloState> {

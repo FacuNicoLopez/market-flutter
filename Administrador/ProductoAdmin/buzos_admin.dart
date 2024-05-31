@@ -1,11 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_csharp3/Administrador/BLoCAdmin/user_bloc.dart';
-import 'package:flutter_csharp3/Administrador/BLoCAdmin/user_state.dart';
-import 'package:flutter_csharp3/Administrador/BarAdmin/bar_admin.dart';
-import 'package:flutter_csharp3/Producto/product_bloc.dart';
-import 'package:flutter_csharp3/Producto/product_event.dart';
-import 'package:flutter_csharp3/Producto/product_state.dart';
+import 'package:flutter_csharp3/Administrador/screen_view_admin.dart';
 
 class BuzoAdmin extends StatelessWidget {
   const BuzoAdmin({super.key});

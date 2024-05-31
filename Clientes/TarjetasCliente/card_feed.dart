@@ -1,7 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_csharp3/Clientes/TarjetasCliente/image_card.dart';
-import 'package:flutter_csharp3/Clientes/TarjetasCliente/vermas_cliente.dart';
-import 'package:flutter_csharp3/Clientes/TarjetasCliente/title_card.dart';
+import 'package:flutter_csharp3/Clientes/screen_view_client.dart';
 
 class CardFeedCliente extends StatelessWidget {
   const CardFeedCliente({super.key, required this.card, required this.index});

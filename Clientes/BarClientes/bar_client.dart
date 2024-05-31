@@ -1,11 +1,4 @@
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_csharp3/Clientes/BLoCCliente/client_model.dart';
-import 'package:flutter_csharp3/Clientes/BarClientes/button_logout.dart';
-import 'package:flutter_csharp3/Clientes/BarClientes/custom_drawer.dart';
-import 'package:flutter_csharp3/Clientes/CarritoCliente/carrito_bloc.dart';
-import 'package:flutter_csharp3/Clientes/CarritoCliente/carrito_state.dart';
-import 'package:go_router/go_router.dart';
+import 'package:flutter_csharp3/Clientes/screen_view_client.dart';
 
 class CommonScaffold extends StatelessWidget {
   final Widget body;

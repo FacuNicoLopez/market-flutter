@@ -1,13 +1,7 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_csharp3/Administrador/VistaProductosAdmin/add_product.dart';
 import 'package:flutter_csharp3/Administrador/VistaProductosAdmin/delete_product.dart';
 import 'package:flutter_csharp3/Administrador/VistaProductosAdmin/edit_product.dart';
-import 'package:flutter_csharp3/Producto/product_bloc.dart';
-import 'package:flutter_csharp3/Administrador/BLoCAdmin/user_bloc.dart';
-import 'package:flutter_csharp3/Producto/product_state.dart';
-import 'package:flutter_csharp3/Administrador/BLoCAdmin/user_state.dart';
-import 'package:flutter_csharp3/Administrador/BarAdmin/bar_admin.dart';
+import 'package:flutter_csharp3/Administrador/screen_view_admin.dart';
 
 class ProductPage extends StatelessWidget {
   const ProductPage({super.key});

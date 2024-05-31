@@ -21,3 +21,5 @@ class CarritoError extends CarritoState {
 
   CarritoError(this.message);
 }
+
+class CarritoVacio extends CarritoState {}

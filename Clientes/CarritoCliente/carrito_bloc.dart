@@ -1,11 +1,6 @@
 import 'dart:convert';
 
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_csharp3/Clientes/BLoCCliente/cliente_bloc.dart';
-import 'package:flutter_csharp3/Clientes/CarritoCliente/carrito_event.dart';
-import 'package:flutter_csharp3/Clientes/CarritoCliente/carrito_model.dart';
-import 'package:flutter_csharp3/Clientes/CarritoCliente/carrito_state.dart';
-import 'package:flutter_csharp3/config.dart';
+import 'package:flutter_csharp3/Clientes/screen_view_client.dart';
 import 'package:http/http.dart' as http;
 
 class CarritoBloc extends Bloc<CarritoEvent, CarritoState> {
@@ -32,19 +27,28 @@ class CarritoBloc extends Bloc<CarritoEvent, CarritoState> {
     }
 
     emit(CarritoLoading());
-    final response = await http.get(Uri.parse(
-        '$url5/cliente/carrito/${loginClientBloc.clienteActual!.idCliente}'));
+    final response = await http.get(
+        Uri.parse('$url5/carrito/${loginClientBloc.clienteActual!.idCliente}'));
+    if (response.statusCode == 404) {
+      emit(CarritoVacio());
+      return;
+    }
     if (response.statusCode != 200) {
-      emit(CarritoError('Error al cargar articulos del carrito'));
+      emit(CarritoError('Error al carga articulos del carrito'));
       return;
     }
 
     try {
       final List<dynamic> carritoJson = json.decode(response.body);
+      if (carritoJson.isEmpty) {
+        emit(CarritoVacio());
+        return;
+      }
       final List<Carrito> carritos = carritoJson.map((json) {
         var carrito = Carrito.fromJson(json);
         return carrito;
       }).toList();
+
       final Map<int, Carrito> consolidatedCarritos = {};
       for (Carrito c in carritos) {
         if (consolidatedCarritos.containsKey(c.articuloCarrito)) {
@@ -66,7 +70,7 @@ class CarritoBloc extends Bloc<CarritoEvent, CarritoState> {
 
     try {
       final response = await http.post(
-        Uri.parse('$url5/cliente/carrito/add'),
+        Uri.parse('$url5/carrito/add'),
         headers: <String, String>{
           'Content-Type': 'application/json; charset=UTF-8',
         },
@@ -92,8 +96,8 @@ class CarritoBloc extends Bloc<CarritoEvent, CarritoState> {
     if (state is CarritoLoaded) {
       final currentState = state as CarritoLoaded;
       try {
-        final response = await http.delete(
-            Uri.parse('$url5/cliente/carrito/remove/${event.carritoId}'));
+        final response = await http
+            .delete(Uri.parse('$url5/carrito/remove/${event.carritoId}'));
 
         if (response.statusCode == 204) {
           final updatedItems = currentState.carritos
@@ -116,7 +120,7 @@ class CarritoBloc extends Bloc<CarritoEvent, CarritoState> {
       try {
         final currentState = state as CarritoLoaded;
         final response = await http.post(
-          Uri.parse('$url5/cliente/carrito/update'),
+          Uri.parse('$url5/carrito/update'),
           headers: {'Content-Type': 'application/json'},
           body: json.encode({
             'ClienteCarrito': loginClientBloc.clienteActual!.idCliente,
@@ -151,7 +155,7 @@ class CarritoBloc extends Bloc<CarritoEvent, CarritoState> {
     try {
       final response = await http.delete(
         Uri.parse(
-            '$url5/cliente/carrito/clear/${loginClientBloc.clienteActual!.idCliente}'),
+            '$url5/carrito/clear/${loginClientBloc.clienteActual!.idCliente}'),
         headers: <String, String>{
           'Content-Type': 'application/json; charset=UTF-8',
         },

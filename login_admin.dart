@@ -1,9 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_csharp3/Administrador/BLoCAdmin/user_bloc.dart';
-import 'package:flutter_csharp3/Administrador/BLoCAdmin/user_event.dart';
-import 'package:flutter_csharp3/Administrador/BLoCAdmin/user_state.dart';
-import 'package:go_router/go_router.dart';
+import 'package:flutter_csharp3/Administrador/screen_view_admin.dart';
 
 class LoginAdmin extends StatefulWidget {
   const LoginAdmin({super.key});

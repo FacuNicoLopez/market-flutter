@@ -1,56 +1,36 @@
 import 'dart:convert';
 
-import 'package:flutter/material.dart';
-import 'package:flutter_csharp3/Administrador/BLoCAdmin/user_model.dart';
-import 'package:flutter_csharp3/Administrador/ProductoAdmin/buzos_admin.dart';
-import 'package:flutter_csharp3/Administrador/ProductoAdmin/camisas_admin.dart';
-import 'package:flutter_csharp3/Administrador/ProductoAdmin/camperas_admin.dart';
-import 'package:flutter_csharp3/Administrador/ProductoAdmin/pantalones_admin.dart';
-import 'package:flutter_csharp3/Administrador/ProductoAdmin/remeras_admin.dart';
-import 'package:flutter_csharp3/Administrador/ProductoAdmin/shorts_admin.dart';
-import 'package:flutter_csharp3/Administrador/ProductoAdmin/sueters_admin.dart';
-import 'package:flutter_csharp3/Administrador/ProductoAdmin/zapatos_admin.dart';
-import 'package:flutter_csharp3/Administrador/TarjetasAdmin/card.dart';
-import 'package:flutter_csharp3/Administrador/VistaClientesAdmin/client.dart';
-import 'package:flutter_csharp3/Administrador/home_admin.dart';
-import 'package:flutter_csharp3/Administrador/VistaProductosAdmin/product.dart';
-import 'package:flutter_csharp3/Clientes/BLoCCliente/client_model.dart';
-import 'package:flutter_csharp3/Clientes/CarritoCliente/carrito.dart';
-import 'package:flutter_csharp3/Clientes/ProductoCliente/buzos_cliente.dart';
-import 'package:flutter_csharp3/Clientes/ProductoCliente/camisas_cliente.dart';
-import 'package:flutter_csharp3/Clientes/ProductoCliente/camperas_cliente.dart';
-import 'package:flutter_csharp3/Clientes/ProductoCliente/pantalones_cliente.dart';
-import 'package:flutter_csharp3/Clientes/ProductoCliente/remeras_cliente.dart';
-import 'package:flutter_csharp3/Clientes/ProductoCliente/shorts_cliente.dart';
-import 'package:flutter_csharp3/Clientes/ProductoCliente/sueters_cliente.dart';
-import 'package:flutter_csharp3/Clientes/ProductoCliente/zapatos_cliente.dart';
-import 'package:flutter_csharp3/Clientes/TarjetasCliente/card_client.dart';
-import 'package:flutter_csharp3/Clientes/home_client.dart';
-import 'package:flutter_csharp3/login_admin.dart';
-import 'package:flutter_csharp3/login_client.dart';
-import 'package:flutter_csharp3/select_user.dart';
-import 'package:go_router/go_router.dart';
+import 'package:flutter_csharp3/Administrador/screen_view_admin.dart';
+import 'package:flutter_csharp3/Clientes/screen_view_client.dart';
 
 final GoRouter routerPublic = GoRouter(
   routes: [
-    //ADMINISTRADOR
+    //-----------ADMINISTRADOR---------
     GoRoute(
       path: '/',
       builder: (BuildContext context, GoRouterState state) =>
           const SelectPage(),
     ),
+
+    GoRoute(
+        path: '/create_admin',
+        builder: (BuildContext context, GoRouterState state) =>
+            const CrearAdmin()),
     GoRoute(
       path: '/login_admin',
       builder: (BuildContext context, GoRouterState state) =>
           const LoginAdmin(),
     ),
-
     GoRoute(
       path: '/home_admin',
       builder: (BuildContext context, GoRouterState state) =>
           HomePage(usuario: state.extra as Usuario),
     ),
-
+    GoRoute(
+      path: '/settings',
+      builder: (BuildContext context, GoRouterState state) =>
+          const CuentaAdmin(),
+    ),
     GoRoute(
       path: '/clientes',
       builder: (BuildContext context, GoRouterState state) =>
@@ -104,7 +84,7 @@ final GoRouter routerPublic = GoRouter(
           const CamisaAdmin(),
     ),
 
-    //ClIENTES
+    //-----------ClIENTES----------
     GoRoute(
       path: '/home_client',
       builder: (BuildContext context, GoRouterState state) =>
@@ -114,6 +94,16 @@ final GoRouter routerPublic = GoRouter(
       path: '/login_client',
       builder: (BuildContext context, GoRouterState state) =>
           const LoginClient(),
+    ),
+    GoRoute(
+      path: '/wallet',
+      builder: (BuildContext context, GoRouterState state) =>
+          const WalletClient(),
+    ),
+    GoRoute(
+      path: '/success_mp',
+      builder: (BuildContext context, GoRouterState state) =>
+          const SuccessPage(),
     ),
     GoRoute(
         path: '/card_client',
@@ -144,7 +134,6 @@ final GoRouter routerPublic = GoRouter(
       builder: (BuildContext context, GoRouterState state) =>
           const ShortCliente(),
     ),
-
     GoRoute(
       path: '/sueters_cliente',
       builder: (BuildContext context, GoRouterState state) =>
@@ -162,8 +151,10 @@ final GoRouter routerPublic = GoRouter(
     ),
     GoRoute(
       path: '/carrito',
-      builder: (BuildContext context, GoRouterState state) =>
-          const HomeCarrito(),
+      builder: (BuildContext context, GoRouterState state) {
+        context.read<CarritoBloc>().add(LoadCartItems());
+        return const HomeCarrito();
+      },
     ),
   ],
   extraCodec: const UsuarioExtraCodec(),

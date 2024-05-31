@@ -1,11 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_csharp3/Administrador/TarjetasAdmin/card_feed.dart';
-import 'package:flutter_csharp3/Administrador/BarAdmin/bar_admin.dart';
-import 'package:flutter_csharp3/Administrador/BLoCAdmin/user_bloc.dart';
-import 'package:flutter_csharp3/Administrador/BLoCAdmin/user_state.dart';
-import 'package:flutter_csharp3/data_card.dart';
-import 'package:go_router/go_router.dart';
+import 'package:flutter_csharp3/Administrador/screen_view_admin.dart';
 
 class CardHome extends StatefulWidget {
   const CardHome({super.key});

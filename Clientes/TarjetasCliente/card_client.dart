@@ -1,11 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_csharp3/Clientes/BLoCCliente/cliente_bloc.dart';
-import 'package:flutter_csharp3/Clientes/TarjetasCliente/card_feed.dart';
-import 'package:flutter_csharp3/data_card.dart';
-import 'package:flutter_csharp3/Clientes/BarClientes/bar_client.dart';
-import 'package:flutter_csharp3/Clientes/BLoCCliente/client_state.dart';
-import 'package:go_router/go_router.dart';
+import 'package:flutter_csharp3/Clientes/screen_view_client.dart';
 
 class CardHomeClient extends StatefulWidget {
   const CardHomeClient({super.key});
