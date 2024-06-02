@@ -35,7 +35,7 @@ class CustomDrawer extends StatelessWidget {
                       ),
                     ),
                     ListTile(
-                      tileColor: themeData.colorScheme.background,
+                      tileColor: themeData.colorScheme.surface,
                       leading:
                           Icon(Icons.home, color: themeData.iconTheme.color),
                       title: Text('Principal',
@@ -45,7 +45,7 @@ class CustomDrawer extends StatelessWidget {
                       },
                     ),
                     ListTile(
-                      tileColor: themeData.colorScheme.background,
+                      tileColor: themeData.colorScheme.surface,
                       leading: Icon(Icons.shopping_bag_rounded,
                           color: themeData.iconTheme.color),
                       title: Text('Ajuste Productos',
@@ -55,7 +55,7 @@ class CustomDrawer extends StatelessWidget {
                       },
                     ),
                     ListTile(
-                      tileColor: themeData.colorScheme.background,
+                      tileColor: themeData.colorScheme.surface,
                       leading: Icon(Icons.co_present_rounded,
                           color: themeData.iconTheme.color),
                       title: Text('Ajuste Clientes',

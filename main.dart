@@ -4,6 +4,7 @@ import 'package:flutter_csharp3/Administrador/ImagenBarAdmin/bloc_image_admin.da
 import 'package:flutter_csharp3/Clientes/BLoCCliente/cliente_bloc.dart';
 import 'package:flutter_csharp3/Clientes/Billetera/WalletBloc/wallet_bloc.dart';
 import 'package:flutter_csharp3/Clientes/CarritoCliente/carrito_bloc.dart';
+import 'package:flutter_csharp3/Clientes/CarritoCliente/carrito_event.dart';
 import 'package:flutter_csharp3/Clientes/ImagenBarCliente/bloc_image_client.dart';
 import 'package:flutter_csharp3/Producto/product_bloc.dart';
 import 'package:flutter_csharp3/Administrador/BLoCAdmin/user_bloc.dart';
@@ -43,10 +44,14 @@ class MyApp extends StatelessWidget {
           create: (context) => ImagenBlocClient(),
         ),
         BlocProvider<CarritoBloc>(
-          create: (context) => CarritoBloc(context.read<LoginClientBloc>()),
+          create: (context) => CarritoBloc(context.read<LoginClientBloc>())
+            ..add(LoadCartItems()),
         ),
         BlocProvider<WalletBloc>(
           create: (context) => WalletBloc(context.read<LoginClientBloc>()),
+        ),
+        BlocProvider<UsuarioAddDeleteBloc>(
+          create: (context) => UsuarioAddDeleteBloc(),
         )
       ],
       child: MaterialApp.router(

@@ -36,7 +36,7 @@ class CustomDrawer extends StatelessWidget {
                       ),
                     ),
                     ListTile(
-                      tileColor: themeData.colorScheme.background,
+                      tileColor: themeData.colorScheme.surface,
                       leading:
                           Icon(Icons.home, color: themeData.iconTheme.color),
                       title: Text('Principal',
@@ -46,7 +46,7 @@ class CustomDrawer extends StatelessWidget {
                       },
                     ),
                     ListTile(
-                      tileColor: themeData.colorScheme.background,
+                      tileColor: themeData.colorScheme.surface,
                       leading:
                           Icon(Icons.wallet, color: themeData.iconTheme.color),
                       title: Text('Billetera',
@@ -56,7 +56,7 @@ class CustomDrawer extends StatelessWidget {
                       },
                     ),
                     ListTile(
-                      tileColor: themeData.colorScheme.background,
+                      tileColor: themeData.colorScheme.surface,
                       title: Text('Cambiar Tema e Imagen',
                           style: themeData.textTheme.bodyLarge),
                       onTap: () {
